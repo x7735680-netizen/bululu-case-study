@@ -1,0 +1,50 @@
+:root {
+  --page-bg: #ffffff;
+  --page-tint: #f7f9fb;        /* section paper tint, very subtle */
+  --blue-900: #245d8f;
+  --blue-700: #3479b2;
+  --blue-500: #4a97d1;
+  --blue-300: #9cc8e8;
+  --blue-100: #eaf5fc;
+  --blue-50:  #f3f8fc;
+  --accent-soft: rgba(52, 121, 178, 0.18);
+  --accent-line: rgba(52, 121, 178, 0.42);
+  --ink:        #16202a;       /* primary text */
+  --ink-mid:    #5f6b75;
+  --ink-faint:  rgba(22, 32, 42, 0.58);
+  --ink-fainter:rgba(22, 32, 42, 0.32);
+  --rule:       rgba(22, 32, 42, 0.14);
+  --text-primary: #16202a;
+  --text-secondary: #5f6b75;
+  --border: #dce7ef;
+  --yellow: #ffd54a;
+  --yellow-bright: #ffe066;
+  --orange: #ff8b45;
+  --content-max: 1280px;
+  --reading-max: 720px;
+  --reference-width: 1440px;
+
+  /* Type system — fixed scale per reference spec */
+  --title:           80px;
+  --title-line:      1.08;
+  --section-label:   30px;
+  --key-title:       60px;
+  --key-title-line:  1.15;
+  --body:            20px;
+  --body-line:       1.55;
+
+  /* Responsive case-study type scale (clamp min/1440-base/max) */
+  --case-section-label: clamp(12px, 1.05vw, 15px);
+  --case-title:         clamp(46px, 4.25vw, 61px);
+  --case-key-title:     clamp(28px, 2.55vw, 37px);
+  --case-body-lg:       clamp(18px, 1.55vw, 22px);
+  --case-body:          clamp(15px, 1.18vw, 17px);
+  --case-caption:       clamp(11px, .9vw, 13px);
+
+  /* Sunrise-derived type system: keep existing sans for body, add serif
+     for the case-study accents (section titles, stat numbers, quote
+     lines). The Roman-numeral section labels and blue-rule take over
+     from the gold-rule in the original sunrise deck. */
+  --font-sans: "PingFang SC", "Noto Sans SC", "Source Han Sans SC", Inter, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "EB Garamond", "Noto Serif SC", "Songti SC", Georgia, "Times New Roman", serif;
+}
