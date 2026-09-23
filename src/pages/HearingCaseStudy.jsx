@@ -193,19 +193,21 @@ export default function HearingCaseStudy() {
 
   const handleGapPointerDown = (event) => {
     gapPointerStartRef.current = event.clientX;
+    event.currentTarget.setPointerCapture?.(event.pointerId);
     pauseGapAutoplay();
   };
 
   const handleGapPointerUp = (event) => {
     const startX = gapPointerStartRef.current;
     gapPointerStartRef.current = null;
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
     if (startX == null) return;
     const deltaX = event.clientX - startX;
     if (Math.abs(deltaX) < 50) {
       resumeGapAutoplay();
       return;
     }
-    goToGapSlide((gapSlideIndex + 1) % 2);
+    goToGapSlide((deltaX < 0 ? gapSlideIndex + 1 : gapSlideIndex - 1 + 2) % 2);
     resumeGapAutoplay();
   };
 
@@ -213,7 +215,7 @@ export default function HearingCaseStudy() {
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
     event.preventDefault();
     pauseGapAutoplay();
-    goToGapSlide((gapSlideIndex + 1) % 2);
+    goToGapSlide((event.key === "ArrowRight" ? gapSlideIndex + 1 : gapSlideIndex - 1 + 2) % 2);
     resumeGapAutoplay();
   };
 
@@ -509,6 +511,10 @@ export default function HearingCaseStudy() {
             onPointerDown={handleGapPointerDown}
             onPointerUp={handleGapPointerUp}
             onPointerCancel={() => {
+              gapPointerStartRef.current = null;
+              resumeGapAutoplay();
+            }}
+            onLostPointerCapture={() => {
               gapPointerStartRef.current = null;
               resumeGapAutoplay();
             }}
