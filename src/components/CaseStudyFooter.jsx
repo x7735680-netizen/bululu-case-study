@@ -8,7 +8,7 @@ export default function CaseStudyFooter() {
           <span className="em">Hearing Speech Service · 2025</span>
         </p>
         <a href="/" className="case-footer-back">
-          ← BACK TO PORTFOLIO
+          SHARED FOR RECRUITMENT PURPOSES ONLY
         </a>
       </div>
     </footer>

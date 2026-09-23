@@ -1,8 +1,8 @@
 export default function CaseStudyNav() {
   return (
     <header className="case-nav">
-      <a href="/" aria-label="Back to portfolio">
-        ← BACK TO PORTFOLIO
+      <a href="/" aria-label="Shared for recruitment purposes only">
+        SHARED FOR RECRUITMENT PURPOSES ONLY
       </a>
       <strong>HEARING SPEECH SERVICE</strong>
       <nav aria-label="Case study sections">
